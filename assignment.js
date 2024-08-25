@@ -1,3 +1,4 @@
+
 //* I denne oppgaven vil det være noe kode som er definert i forkant, ikke fjern noe av denne, men dere skal noen steder fylle dem ut videre slik at koden fungerer.
 
 /* Oppgave 1:  
@@ -29,8 +30,8 @@ function filterArray(arr) {
 }
 
 //! fiks disse:
-const getOdds = (num) => num // legg til noe mer her for å finne alle tall som er oddetall (PSEUDO KODE: MODULO DELT PÅ TO ER IKKE STRICT LIK NULL);
-const getEvens = (num) => num // legg til noe mer her for å finne alle tall som er oddetall (PSEUDO KODE: MODULO DELT PÅ TO ER STRICT LIK NULL);
+const getOdds = (num) => num % 2 !== 0; // legg til noe mer her for å finne alle tall som er oddetall (PSEUDO KODE: MODULO DELT PÅ TO ER IKKE STRICT LIK NULL);
+const getEvens = (num) => num % 2 === 0;// legg til noe mer her for å finne alle tall som er oddetall (PSEUDO KODE: MODULO DELT PÅ TO ER STRICT LIK NULL);
 
 
 /* Oppgave 3
@@ -50,8 +51,8 @@ tips2: syntaxen ligner noe på det som blir gjort i oppgave 2, men det er 2 para
 const { odds, evens } = filterArray(randomArray);
 
 //! fiks disse:
-const sumOfOdds = odds
-const sumOfEvens = evens
+const sumOfOdds = odds.reduce((acc, curr) => acc + curr, 0);
+const sumOfEvens = evens.reduce((acc, curr) => acc + curr, 0);
 
 /* Oppgave 3.1
 
@@ -68,6 +69,10 @@ console.log("description of console log:", variabelName)
 
 //! skriv oppgave 3.1 svar her
 
+console.log("Sum of odd numbers:", sumOfOdds);
+console.log("Sum of even numbers:", sumOfEvens);
+console.log("Length of odd numbers array:", odds.length);
+console.log("Length of even numbers array:", evens.length);
 
 /* Oppgave 4 
 
