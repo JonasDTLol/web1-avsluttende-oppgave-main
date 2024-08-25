@@ -91,10 +91,17 @@ Lag i tillegg en logikk som sjekker hvis verken den første eller andre contitio
 // Conditional Logic
 let result = "";
 let difference = 0;
+
 if (sumOfOdds > sumOfEvens) {
-  valueDifference = sumOfOdds - sumOfEvens
-  result = "Sum of Odds is greater than Sum of Evens."
-} /* skriv videre her */
+  difference = sumOfOdds - sumOfEvens;
+  result = "Sum of Odds is greater than Sum of Evens.";
+} else if (sumOfOdds < sumOfEvens) {
+  difference = sumOfEvens - sumOfOdds;
+  result = "Sum of Evens is greater than Sum of Odds.";
+} else {
+  difference = 0;
+  result = "Sum of Odds is equal to Sum of Evens.";
+}
 
 
 /* Oppgave 4.1
@@ -102,6 +109,7 @@ if (sumOfOdds > sumOfEvens) {
 konsoll log difference. Bruk samme syntax som i oppgave 3.1
 */
 
+console.log("Difference:", difference);
 /* Oppgave 5
 
 Lag en ny conditional logikk under hvor man sjekker hvilke av odds og evens som er lengst (syntax messig er det veldig likt som i oppgave 4, men man sjekker andre ting, ikke sumOfOdds og sumOfEvens). typeDifference skal endres til en template literal string med hensiktsmessig tekst for å forklare hva som skjer.
@@ -119,7 +127,15 @@ if (this > that) {
 let typeDifference;
 
 //! skriv conditional logikken her
+if (odds.length > evens.length) {
+  typeDifference = ` There are ${odds.length - evens.length} more odds than evens.`;
+} else if (evens.length > odds.length) {
+  typeDifference = `There are ${evens.length - odds.length} more evens than odds`;
+} else {
+  typeDifference = "There are an equal number of odds and evens.";
+}
 
+console.log(typeDifference);
 
 /* Oppgave 6
 
